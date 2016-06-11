@@ -23,11 +23,17 @@ Feel free to use your favorite javascript/css libraries. Please submit your sour
         height: 100%;
         overflow: hidden;;
       }
+      .title_container {
+        text-align:center;
+        margin-top:40px;
+        font-size: 30px;
+      }
       .container {
         position: relative;
-        top: 45%;
+        top: 35%;
         transform: translateY(-50%);
-        width:100%;
+        width:1000px;
+        margin: 0 auto;
         text-align: center;
       }
       .aux_container {
@@ -35,9 +41,16 @@ Feel free to use your favorite javascript/css libraries. Please submit your sour
       }
       #converters {
         margin: 0 auto;
+        padding-top: 50px;
       }
       .indent {
         font-size: 55px;
+      }
+      .image_container {
+        float:left;
+      }
+      .image_container img {
+        width: 500px;
       }
       input {
         width: 290px;
@@ -52,8 +65,11 @@ Feel free to use your favorite javascript/css libraries. Please submit your sour
     </style>
   </head>
   <body>
-    <img style="float:left;" src="https://d7mj4aqfscim2.cloudfront.net/images/splash-2014/globe1.svg">
+    <div class="title_container">Celsius to Fahrenheit converter</div>
     <div class='container'>
+      <div class="image_container">
+        <img src="https://d7mj4aqfscim2.cloudfront.net/images/splash-2014/globe1.svg">
+      </div>
       <div id='converters'>
         <div class='aux_container'>
           <input id="c" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onkeyup="convert('C')" value="0" maxlength="3">
