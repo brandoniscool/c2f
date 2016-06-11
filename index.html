@@ -1,0 +1,86 @@
+
+<!--Please design a browser application that converts between Celsius and Fahrenheit and vice-versa.
+Feel free to use your favorite javascript/css libraries. Please submit your source through github or any of the JS code playgrounds(https://www.sitepoint.com/7-code-playgrounds/).!-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Celcius to Farenheit Converter</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      ::-moz-selection { background: lightblue; }
+      ::selection { background: lightblue; }
+      html {
+        font-family: 'Oswald', sans-serif;
+        color: #fff;
+        text-shadow: 5px 5px 2px rgba(0,0,0,0.2);
+        background-image: url('https://d7mj4aqfscim2.cloudfront.net/images/splash-2014/star-pattern1.svg');
+        background-color: #3c3c3c;
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        overflow: hidden;;
+      }
+      .container {
+        position: relative;
+        top: 45%;
+        transform: translateY(-50%);
+        width:100%;
+        text-align: center;
+      }
+      .aux_container {
+        display: inline-flex;
+      }
+      #converters {
+        margin: 0 auto;
+      }
+      .indent {
+        font-size: 55px;
+      }
+      input {
+        width: 290px;
+        outline: 1px;
+        border: 0;
+        background-color: transparent;
+        color: #fff;
+        font-size: 160px;
+        text-align: right;
+        text-shadow: 5px 5px 2px rgba(0,0,0,0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <img style="float:left;" src="https://d7mj4aqfscim2.cloudfront.net/images/splash-2014/globe1.svg">
+    <div class='container'>
+      <div id='converters'>
+        <div class='aux_container'>
+          <input id="c" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onkeyup="convert('C')" value="0" maxlength="3">
+          <div class="indent">°C</div>
+        </div>
+        <div class='aux_container'>
+          <input id="f" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onkeyup="convert('F')" value="32" maxlength="3">
+          <div class="indent">°F</div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    function convert(degree) {
+        f_ele = document.getElementById("f");
+        c_ele = document.getElementById("c");
+
+        if (degree == "C") {
+            F = c_ele.value * 9 / 5 + 32;
+            f_ele.value = Math.round(F);
+        }
+
+        if (degree == "F"){
+            C = (f_ele.value -32) * 5 / 9;
+            c_ele.value = Math.round(C);
+        }
+    }
+  </script>
+  </body>
+</html>
